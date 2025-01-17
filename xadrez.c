@@ -1,32 +1,55 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+#define BISPO_MOVEMENT 5  
+#define TORRE_MOVEMENT 5  
+#define RAINHA_MOVEMENT 8 
+
+
+void moverBispo() {
+    
+    for (int i = 1; i <= BISPO_MOVEMENT; i++) {
+        printf("Bispo se moveu para a diagonal superior direita (%d)\n", i);
+    }
+}
+
+
+void moverTorre() {
+    
+    for (int i = 1; i <= TORRE_MOVEMENT; i++) {
+        printf("Torre se moveu para a direita (%d)\n", i);
+    }
+}
+
+
+void moverRainha() {
+    
+    for (int i = 1; i <= RAINHA_MOVEMENT; i++) {
+        printf("Rainha se moveu para a esquerda (%d)\n", i);
+    }
+}
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    char atributo;
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    
+    printf("Escolha a peça para mover (b para Bispo, t para Torre, r para Rainha): ");
+    scanf(" %c", &atributo);
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    
+    if (atributo == 'b') {
+        printf("Movimento do Bispo:\n");
+        moverBispo();
+    } else if (atributo == 't') {
+        printf("Movimento da Torre:\n");
+        moverTorre();
+    } else if (atributo == 'r') {
+        printf("Movimento da Rainha:\n");
+        moverRainha();
+    } else {
+        
+        printf("Opção inválida! Escolha 'b', 't' ou 'r'.\n");
+    }
 
     return 0;
 }
+
